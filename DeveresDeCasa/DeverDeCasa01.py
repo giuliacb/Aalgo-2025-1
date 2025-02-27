@@ -112,13 +112,25 @@ def executar_algoritmo():
 executar_algoritmo()
 
 
-# Tempo de execução para ordenar uma lista de tamanho 100: 00:00.000508.
+# Digite o tamanho da lista para ordenação: 100
+# Iniciando algoritmo de ordenação Bubble Sort as : 27/02/2025 - 10:56:27.696012  
+# Finalizando algoritmo de ordenação Bubble Sort as : 27/02/2025 - 10:56:27.696648
+# Tempo de execução para ordenar uma lista de tamanho 100: 00:00.000636.
 
-# Tempo de execução para ordenar uma lista de tamanho 1,000: 00:00.031992.
+# Digite o tamanho da lista para ordenação: 1000
+# Iniciando algoritmo de ordenação Bubble Sort as : 27/02/2025 - 10:57:24.530688
+# Finalizando algoritmo de ordenação Bubble Sort as : 27/02/2025 - 10:57:24.583240
+# Tempo de execução para ordenar uma lista de tamanho 1,000: 00:00.052552.
 
-# Tempo de execução para ordenar uma lista de tamanho 10,000: 00:03.445674.
+# Digite o tamanho da lista para ordenação: 10000
+# Iniciando algoritmo de ordenação Bubble Sort as : 27/02/2025 - 10:58:06.289671
+# Finalizando algoritmo de ordenação Bubble Sort as : 27/02/2025 - 10:58:12.124258
+# Tempo de execução para ordenar uma lista de tamanho 10,000: 00:05.834587.
 
-# Tempo de execução para ordenar uma lista de tamanho 100,000: 07:43.502814.
+# Digite o tamanho da lista para ordenação: 100000
+# Iniciando algoritmo de ordenação Bubble Sort as : 27/02/2025 - 10:58:42.788161
+# Finalizando algoritmo de ordenação Bubble Sort as : 27/02/2025 - 11:08:18.318667
+# Tempo de execução para ordenar uma lista de tamanho 100,000: 09:35.530506.
 
 #A complexidade do Bubble Sort é O(n²) no pior e no caso médio, o que o torna um algoritmo ineficiente para listas grandes.
 #Embora o melhor caso seja linear (O(n)), a complexidade quadrática no pior caso faz com que, em muitas situações, algoritmos
