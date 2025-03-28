@@ -16,17 +16,19 @@
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
     
 <tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="logging.html">logging</a><br>
-</td><td class="multicolumn"><a href="re.html">re</a><br>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="csv.html">csv</a><br>
+<a href="logging.html">logging</a><br>
+</td><td class="multicolumn"><a href="os.html">os</a><br>
+<a href="re.html">re</a><br>
 </td><td class="multicolumn"><a href="requests.html">requests</a><br>
-</td><td class="multicolumn"><a href="time.html">time</a><br>
-</td></tr></table></td></tr></table><p>
+<a href="time.html">time</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
 <table class="section">
 <tr class="decor functions-decor heading-text">
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
     
 <tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><dl><dt><a name="-encontrar_xpath"><strong>encontrar_xpath</strong></a>(site, numero)</dt><dd><span class="code">Encontra&nbsp;o&nbsp;XPath&nbsp;do&nbsp;número&nbsp;dentro&nbsp;do&nbsp;HTML.<br>
+<td class="singlecolumn"><dl><dt><a name="-encontrar_xpath"><strong>encontrar_xpath</strong></a>(site, numero, usuario)</dt><dd><span class="code">Encontra&nbsp;o&nbsp;XPath&nbsp;do&nbsp;número&nbsp;dentro&nbsp;do&nbsp;HTML.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;site&nbsp;(BeautifulSoup):&nbsp;Objeto&nbsp;BeautifulSoup&nbsp;do&nbsp;HTML.<br>
@@ -34,7 +36,7 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;str:&nbsp;XPath&nbsp;do&nbsp;elemento&nbsp;contendo&nbsp;o&nbsp;número.</span></dd></dl>
- <dl><dt><a name="-extrair_numero"><strong>extrair_numero</strong></a>(url, posicao)</dt><dd><span class="code">Extrai&nbsp;um&nbsp;número&nbsp;de&nbsp;uma&nbsp;página&nbsp;web&nbsp;na&nbsp;posição&nbsp;especificada.<br>
+ <dl><dt><a name="-extrair_numero"><strong>extrair_numero</strong></a>(url, posicao, usuario)</dt><dd><span class="code">Extrai&nbsp;um&nbsp;número&nbsp;de&nbsp;uma&nbsp;página&nbsp;web&nbsp;na&nbsp;posição&nbsp;especificada.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;url&nbsp;(str):&nbsp;URL&nbsp;da&nbsp;página&nbsp;web.<br>
@@ -42,6 +44,7 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;(numero,&nbsp;contexto)&nbsp;onde&nbsp;numero&nbsp;é&nbsp;o&nbsp;número&nbsp;extraído&nbsp;e&nbsp;contexto&nbsp;é&nbsp;o&nbsp;trecho&nbsp;ao&nbsp;redor.</span></dd></dl>
+ <dl><dt><a name="-registrar_log"><strong>registrar_log</strong></a>(usuario, mensagem, nivel='INFO')</dt><dd><span class="code">Registra&nbsp;um&nbsp;log&nbsp;personalizado&nbsp;em&nbsp;arquivo&nbsp;CSV&nbsp;com&nbsp;o&nbsp;nome&nbsp;do&nbsp;usuário,&nbsp;data&nbsp;e&nbsp;hora,&nbsp;mensagem&nbsp;e&nbsp;info.</span></dd></dl>
  <dl><dt><a name="-solicitar_nome_user"><strong>solicitar_nome_user</strong></a>()</dt><dd><span class="code">Solicita&nbsp;o&nbsp;nome&nbsp;do&nbsp;usuário&nbsp;e&nbsp;valida&nbsp;o&nbsp;formato.<br>
 &nbsp;<br>
 Returns:<br>
@@ -53,5 +56,11 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;bool:&nbsp;True&nbsp;se&nbsp;a&nbsp;URL&nbsp;for&nbsp;válida,&nbsp;False&nbsp;caso&nbsp;contrário.</span></dd></dl>
-</td></tr></table>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>log_file</strong> = 'monitoramento.csv'</td></tr></table>
 </body></html>

@@ -1,0 +1,20 @@
+Data,Hora,Usuário,Nível,Mensagem
+28-03-2025,19:14:15,Giulia,INFO,Usuário registrado e iniciou monitoramento.
+28-03-2025,19:14:41,Giulia,INFO,"XPath do número 6,2353: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[8]/a[4]/div[1]"
+28-03-2025,19:14:41,Giulia,INFO,"Número encontrado: 6,2353 (posição 19)"
+28-03-2025,19:15:11,Giulia,INFO,"XPath do número 6,2353: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[8]/a[4]/div[1]"
+28-03-2025,19:15:11,Giulia,INFO,"Número encontrado: 6,2353 (posição 19)"
+28-03-2025,19:15:42,Giulia,INFO,"XPath do número 6,2353: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[8]/a[4]/div[1]"
+28-03-2025,19:15:42,Giulia,INFO,"Número encontrado: 6,2353 (posição 19)"
+28-03-2025,19:16:12,Giulia,INFO,"XPath do número 6,2353: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[8]/a[4]/div[1]"
+28-03-2025,19:16:12,Giulia,INFO,"Número encontrado: 6,2353 (posição 19)"
+28-03-2025,19:16:43,Giulia,INFO,"XPath do número 6,2353: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[8]/a[4]/div[1]"
+28-03-2025,19:16:43,Giulia,INFO,"Número encontrado: 6,2353 (posição 19)"
+28-03-2025,19:17:20,Luiz,INFO,Usuário registrado e iniciou monitoramento.
+28-03-2025,19:17:25,Luiz,INFO,"XPath do número 37,42: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[14]/a[4]/div[1]"
+28-03-2025,19:17:25,Luiz,INFO,"Número encontrado: 37,42 (posição 25)"
+28-03-2025,19:18:07,Maria,INFO,Usuário registrado e iniciou monitoramento.
+28-03-2025,19:18:12,Maria,INFO,"XPath do número 0,99: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[18]/a[6]/div[1]"
+28-03-2025,19:18:12,Maria,INFO,"Número encontrado: 0,99 (posição 30)"
+28-03-2025,19:18:42,Maria,INFO,"XPath do número 0,99: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[18]/a[6]/div[1]"
+28-03-2025,19:18:42,Maria,INFO,"Número encontrado: 0,99 (posição 30)"
