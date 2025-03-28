@@ -3,17 +3,30 @@ from bs4 import BeautifulSoup
 import re
 import time
 import logging  # permite resgistrar logs no sistema, armazenando erros, avisos e ações
+import csv
+import os
 from urllib.parse import urlparse # urlparse serve para analisar e decompor urls em seus comps (protocolo, dominio, caminho...)
+from datetime import datetime
+
+#configurando logs CSV
+log_file = "monitoramento.csv"
+
+#verifica se o arquivo monitoramento.csv ja existe para nn sobrescrever os dados
+#os fornece funções para interagir com o sistema operacional
+if not os.path.exists(log_file): 
+  with open(log_file, "w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Data", "Hora", "Usuário", "Nível", "Mensagem"])
 
 
-#configurando logs
-#filename -> onde os logs serão salvos
-#level=logging.INFO -> configura nivel minimop do log para INFO...apenas mensagens de INFO, WARNING, ERROR e CRITICAL serão registradas
-#format -> asctime = timestamp do log / levelname = nivel do log / message = mensagem do log
-logging.basicConfig(filename="monitoramento.log", 
-                    level=logging.INFO, 
-                    format="%(asctime)s - %(levelname)s - %(message)s", 
-                    encoding="utf-8")
+def registrar_log(usuario, mensagem, nivel="INFO"):
+  """Registra um log personalizado em arquivo CSV com o nome do usuário, data e hora, mensagem e info."""
+  now = datetime.now()
+  data = now.strftime("%d-%m-%Y")
+  hora = now.strftime("%H:%M:%S")
+  with open(log_file, "a", newline="", encoding="utf-8") as file:
+     writer = csv.writer(file)
+     writer.writerow([data, hora, usuario, nivel, mensagem])
 
 
 #validando se a url é valida
@@ -54,7 +67,7 @@ def solicitar_nome_user():
 
 
 #xpath localiza o elemento html exato que contem o numero 
-def encontrar_xpath(site, numero):
+def encontrar_xpath(site, numero, usuario):
   """Encontra o XPath do número dentro do HTML.
 
   Args:
@@ -74,12 +87,12 @@ def encontrar_xpath(site, numero):
       caminho.insert(0, f"{tag.parent.name}[{position}]")
       tag = tag.parent
     xpath = "/" + "/".join(caminho)
-    logging.info(f"XPath do número {numero}: {xpath}")
+    registrar_log(usuario, f"XPath do número {numero}: {xpath}")
     return xpath
-  return "XPath não encontrado"
+  return "XPath não encontrado."
 
 
-def extrair_numero(url, posicao):
+def extrair_numero(url, posicao, usuario):
   #simula uma requisição feita por um navegador real - evita bloqueio
   """Extrai um número de uma página web na posição especificada.
 
@@ -99,7 +112,7 @@ def extrair_numero(url, posicao):
     requisicao = requests.get(url, headers=headers, timeout=10)
     requisicao.raise_for_status()  # Verifica se a resposta foi bem-sucedida (código de status HTTP 200)
   except requests.RequestException as e:
-    logging.error(f"Erro ao acessar a URL {url}: {e}")
+    registrar_log(usuario, f"Erro ao acessar a URL {url}: {e}", "ERROR")
     return None, None, None
     
 
@@ -125,11 +138,11 @@ def extrair_numero(url, posicao):
       #slicing (fatiamento) para extrair um trecho da string texto_pagina entre as posições indicadas por inicio_contexto e fim_contexto
       contexto = texto_pagina[inicio_contexto:fim_contexto].strip()
 
-      xpath = encontrar_xpath(site, numero)
-      logging.info(f"Número encontrado: {numero} (posição {posicao})")
+      xpath = encontrar_xpath(site, numero, usuario)
+      registrar_log(usuario, f"Número encontrado: {numero} (posição {posicao})")
       return numero, contexto, xpath
     
-  logging.warning("Nenhum número encontrado na página.")
+  registrar_log(usuario, "Nenhum número encontrado na página.", "WARNING")
   return None, None, None
 
 
@@ -139,7 +152,7 @@ def extrair_numero(url, posicao):
 #as funções estarão disponiveis mas não serão chamadas automaticamente
 if __name__ == "__main__":
   usuario = solicitar_nome_user()
-  logging.info(f"Usuário {usuario} foi registrado e iniciou monitoramento.")
+  registrar_log(usuario, "Usuário registrado e iniciou monitoramento.")
 
   url = input("Digite a sua URL desejada: ")
   while not validar_url(url):
@@ -150,11 +163,11 @@ if __name__ == "__main__":
     # Solicita a posição do número ao usuário
     posicao = int(input("Digite a posição do número a ser monitorado (começando de 0): "))
   except ValueError: #se a conversao falhar um erro (ValueError) ocorre...esse bloco o captura, exibe uma mensagem de error e finaliza o programa (exit())
-    logging.error("A posição deve ser um número inteiro.")
+    registrar_log(usuario, "A posição deve ser um número inteiro.", "ERROR")
     exit()
 
   # Capturando o número inicial e seu contexto
-  numero_inicial, contexto_inicial, xpath_inicial = extrair_numero(url, posicao)
+  numero_inicial, contexto_inicial, xpath_inicial = extrair_numero(url, posicao, usuario)
 
   #verifica se o num foi encontrado na pag
   if numero_inicial:
@@ -168,7 +181,7 @@ if __name__ == "__main__":
   # Loop para monitorar mudanças no número
   while True:
       time.sleep(30)  # Espera 30 segundos antes de verificar novamente
-      numero_atual, contexto_atual, xpath_atual = extrair_numero(url, posicao)
+      numero_atual, contexto_atual, xpath_atual = extrair_numero(url, posicao, usuario)
 
       #o primeiro numero_atual garente que a variavel nao é None ou str vazia
       #ja numero_atual != numero_inicial verifica se o num mudou
@@ -176,7 +189,7 @@ if __name__ == "__main__":
           print(f"🚨 Mudança detectada! Novo valor: {numero_atual} (Anterior: {numero_inicial})")
           print(f"Novo contexto: ...{contexto_atual}...")
           print(f"Novo XPath: {xpath_atual}.")
-          logging.info(f"Mudança detectada: {numero_atual} -> {numero_inicial}")
+          registrar_log(usuario, f"🚨 Mudança detectada: {numero_inicial} -> {numero_atual}")
           numero_inicial = numero_atual  # Atualiza o número inicial para continuar monitorando
       else:
           print(f"Nenhuma mudança detectada. O número continua: {numero_inicial}")
