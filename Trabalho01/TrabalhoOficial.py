@@ -1,10 +1,7 @@
 import re
 import time
-import logging
 import csv
 import os
-from lxml import etree
-from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from datetime import datetime
 from selenium import webdriver
@@ -68,21 +65,85 @@ def configurar_driver():
 
 
 def encontrar_numero_e_xpath(driver, numero, usuario):
-    """Procura o número e retorna seu XPath"""
+    """Procura o número diretamente com Selenium e retorna seu XPath"""
+    try:
+        # Espera até que algum texto da página contenha o número (tempo limite: 10s)
+        elementos = WebDriverWait(driver, 10).until(
+            EC.presence_of_all_elements_located((By.XPATH, f"//*[contains(text(), '{numero}')]"))
+        )
 
-    soup = BeautifulSoup(driver.page_source, "html.parser")
-    for tag in soup.find_all(string=re.compile(re.escape(numero))):
-        caminho = []
-        elemento = tag
-        while elemento and elemento.parent:
-            siblings = [s for s in elemento.parent.find_all(elemento.name, recursive=False)]
-            index = siblings.index(elemento) + 1 if len(siblings) > 1 else 1
-            caminho.insert(0, f"{elemento.parent.name}[{index}]")
-            elemento = elemento.parent
-        xpath = "/" + "/".join(caminho)
-        registrar_log(usuario, f"XPath do número {numero}: {xpath}")
-        return numero, xpath
+        for elemento in elementos:
+            try:
+                texto = elemento.text.strip()
+                if numero in texto:
+                    # Constrói o XPath absoluto do elemento encontrado
+                    xpath = driver.execute_script("""
+                        function absoluteXPath(element) {
+                            var comp, comps = [];
+                            var parent = null;
+                            var xpath = '';
+                            var getPos = function(element) {
+                                var position = 1, curNode;
+                                if (element.nodeType == Node.ATTRIBUTE_NODE) {
+                                    return null;
+                                }
+                                for (curNode = element.previousSibling; curNode; curNode = curNode.previousSibling){
+                                    if (curNode.nodeName == element.nodeName)
+                                        ++position;
+                                }
+                                return position;
+                            }
+
+                            if (element instanceof Document) {
+                                return '/';
+                            }
+
+                            for (; element && !(element instanceof Document); element = element.nodeType ==Node.ATTRIBUTE_NODE ? element.ownerElement : element.parentNode) {
+                                comp = {};
+                                switch (element.nodeType) {
+                                    case Node.TEXT_NODE:
+                                        comp.name = 'text()';
+                                        break;
+                                    case Node.ATTRIBUTE_NODE:
+                                        comp.name = '@' + element.nodeName;
+                                        break;
+                                    case Node.PROCESSING_INSTRUCTION_NODE:
+                                        comp.name = 'processing-instruction()';
+                                        break;
+                                    case Node.COMMENT_NODE:
+                                        comp.name = 'comment()';
+                                        break;
+                                    case Node.ELEMENT_NODE:
+                                        comp.name = element.nodeName;
+                                        break;
+                                }
+                                comp.position = getPos(element);
+                                comps.push(comp);
+                            }
+
+                            for (var i = comps.length - 1; i >= 0; i--) {
+                                comp = comps[i];
+                                xpath += '/' + comp.name.toLowerCase();
+                                if (comp.position !== null) {
+                                    xpath += '[' + comp.position + ']';
+                                }
+                            }
+
+                            return xpath;
+                        }
+                        return absoluteXPath(arguments[0]);
+                    """, elemento)
+
+                    registrar_log(usuario, f"XPath do número {numero}: {xpath}")
+                    return numero, xpath
+            except Exception:
+                continue
+
+    except Exception:
+        pass
+
     return None, None
+
 
 def extrair_valor_por_xpath(driver, xpath):
     try:
@@ -162,3 +223,7 @@ if __name__ == "__main__":
         registrar_log(usuario, f"Erro inesperado: {e}", "ERROR")
         print(f"Erro inesperado: {e}")
         driver.quit()
+
+# python -m pydoc Trabalho01 -- GERA DOCUMENTAÇÃO NO TERMINAL
+# python -m pydoc -w Trabalho01 -- GERA ARQUIVO HTML COM A DOCUMENTAÇÃO
+# python -m pydoc -p 8000 -- RODAR UM SERVIDOR DE DOCUMENTAÇÃO

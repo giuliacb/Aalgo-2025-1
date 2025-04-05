@@ -356,3 +356,19 @@ Stacktrace:
 05-04-2025,14:57:49,giulia,INFO,Usuário registrado e iniciou monitoramento.
 05-04-2025,14:57:58,giulia,INFO,XPath do número 4003: /[document][2]/html[2]/body[1]/div[1]/div[1]/div[7]/header[6]/nav[1]/ul[1]/li[2]/div[2]/div[4]/div[1]/strong[1]
 05-04-2025,14:57:58,giulia,INFO,Número encontrado: 4003 (posição 0)
+05-04-2025,15:04:03,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,15:04:37,giulia,WARNING,"Número 5,836 não encontrado."
+05-04-2025,15:06:01,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,15:06:20,giulia,WARNING,"Número 5,836 não encontrado."
+05-04-2025,15:10:33,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,15:10:58,giulia,INFO,"XPath do número 5,836: /html[1]/body[1]/div[1]/div[1]/div[1]/header[1]/div[2]/div[1]/div[1]/a[1]/span[2]"
+05-04-2025,15:16:49,giulia,INFO,Monitoramento encerrado manualmente.
+05-04-2025,15:17:46,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,15:18:06,giulia,INFO,XPath do número 41: /html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[3]/span[1]
+05-04-2025,15:19:06,giulia,INFO,🚨 Mudança detectada: 41 -> 40
+05-04-2025,15:20:06,giulia,INFO,🚨 Mudança detectada: 40 -> 39
+05-04-2025,15:20:24,giulia,INFO,Monitoramento encerrado manualmente.
+05-04-2025,15:21:16,luiz,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,15:21:36,luiz,INFO,XPath do número 38: /html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[3]/span[1]
+05-04-2025,15:22:06,luiz,INFO,🚨 Mudança detectada: 38 -> 37
+05-04-2025,15:22:29,luiz,INFO,Monitoramento encerrado manualmente.
