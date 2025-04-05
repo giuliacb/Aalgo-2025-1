@@ -18,3 +18,341 @@ Data,Hora,Usuário,Nível,Mensagem
 28-03-2025,19:18:12,Maria,INFO,"Número encontrado: 0,99 (posição 30)"
 28-03-2025,19:18:42,Maria,INFO,"XPath do número 0,99: /[document][2]/html[4]/body[39]/div[4]/div[2]/div[18]/a[6]/div[1]"
 28-03-2025,19:18:42,Maria,INFO,"Número encontrado: 0,99 (posição 30)"
+04-04-2025,09:46:35,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,09:47:16,giulia,ERROR,A posição deve ser um número inteiro.
+04-04-2025,09:47:38,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,09:47:44,giulia,ERROR,A posição deve ser um número inteiro.
+04-04-2025,09:47:52,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,09:48:03,giulia,INFO,XPath do número 5: /[document][2]/html[1]/head[131]/script[1]
+04-04-2025,09:48:03,giulia,INFO,Número encontrado: 5 (posição 5)
+04-04-2025,09:48:34,giulia,INFO,XPath do número 5: /[document][2]/html[1]/head[131]/script[1]
+04-04-2025,09:48:34,giulia,INFO,Número encontrado: 5 (posição 5)
+04-04-2025,09:49:04,giulia,INFO,XPath do número 5: /[document][2]/html[1]/head[131]/script[1]
+04-04-2025,09:49:04,giulia,INFO,Número encontrado: 5 (posição 5)
+04-04-2025,09:49:34,giulia,INFO,XPath do número 5: /[document][2]/html[1]/head[131]/script[1]
+04-04-2025,09:49:34,giulia,INFO,Número encontrado: 5 (posição 5)
+04-04-2025,09:50:05,giulia,INFO,XPath do número 5: /[document][2]/html[1]/head[131]/script[1]
+04-04-2025,09:50:05,giulia,INFO,Número encontrado: 5 (posição 5)
+04-04-2025,09:50:36,giulia,INFO,XPath do número 5: /[document][2]/html[1]/head[131]/script[1]
+04-04-2025,09:50:36,giulia,INFO,Número encontrado: 5 (posição 5)
+04-04-2025,09:51:07,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,09:51:15,giulia,INFO,XPath do número 4003: /[document][2]/html[2]/body[1]/div[1]/div[1]/div[7]/header[6]/nav[1]/ul[1]/li[2]/div[2]/div[4]/div[1]/strong[1]
+04-04-2025,09:51:15,giulia,INFO,Número encontrado: 4003 (posição 0)
+04-04-2025,09:51:45,giulia,INFO,XPath do número 4003: /[document][2]/html[2]/body[1]/div[1]/div[1]/div[7]/header[6]/nav[1]/ul[1]/li[2]/div[2]/div[4]/div[1]/strong[1]
+04-04-2025,09:51:45,giulia,INFO,Número encontrado: 4003 (posição 0)
+04-04-2025,09:52:16,giulia,INFO,XPath do número 4003: /[document][2]/html[2]/body[1]/div[1]/div[1]/div[7]/header[6]/nav[1]/ul[1]/li[2]/div[2]/div[4]/div[1]/strong[1]
+04-04-2025,09:52:16,giulia,INFO,Número encontrado: 4003 (posição 0)
+04-04-2025,09:52:46,giulia,INFO,XPath do número 4003: /[document][2]/html[2]/body[1]/div[1]/div[1]/div[7]/header[6]/nav[1]/ul[1]/li[2]/div[2]/div[4]/div[1]/strong[1]
+04-04-2025,09:52:46,giulia,INFO,Número encontrado: 4003 (posição 0)
+04-04-2025,09:55:04,GIULIA,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,09:55:18,GIULIA,INFO,XPath do número 5: /[document][2]/html[1]/head[131]/script[1]
+04-04-2025,09:55:18,GIULIA,INFO,Número encontrado: 5 (posição 5)
+04-04-2025,14:57:24,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,14:57:48,giulia,WARNING,"Número 5,823 NÃO econtrado na página."
+04-04-2025,14:58:12,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,14:58:20,giulia,WARNING,Número 26 NÃO econtrado na página.
+04-04-2025,14:58:36,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,14:58:42,giulia,INFO,XPath do número 46: /[document][2]/html[1]/head[151]/style[1]
+04-04-2025,14:58:42,giulia,INFO,Número 46 encontrado na página.
+04-04-2025,14:59:12,giulia,INFO,XPath do número 46: /[document][2]/html[1]/head[151]/style[1]
+04-04-2025,14:59:12,giulia,INFO,Número 46 encontrado na página.
+04-04-2025,14:59:44,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:00:01,giulia,INFO,"XPath do número 5,8275: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:00:01,giulia,INFO,"Número 5,8275 encontrado na página."
+04-04-2025,15:00:31,giulia,INFO,"XPath do número 5,8275: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:00:31,giulia,INFO,"Número 5,8275 encontrado na página."
+04-04-2025,15:01:02,giulia,WARNING,"Número 5,8275 NÃO econtrado na página."
+04-04-2025,15:01:02,giulia,INFO,"🚨 Mudança detectada: 5,8275 -> None"
+04-04-2025,15:01:32,giulia,WARNING,"Número 5,8275 NÃO econtrado na página."
+04-04-2025,15:02:02,giulia,WARNING,"Número 5,8275 NÃO econtrado na página."
+04-04-2025,15:02:33,giulia,WARNING,"Número 5,8275 NÃO econtrado na página."
+04-04-2025,15:03:03,giulia,WARNING,"Número 5,8275 NÃO econtrado na página."
+04-04-2025,15:03:34,giulia,WARNING,"Número 5,8275 NÃO econtrado na página."
+04-04-2025,15:04:06,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:04:27,giulia,INFO,"XPath do número 5,8258: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:04:27,giulia,INFO,"Número 5,8258 encontrado na página."
+04-04-2025,15:04:57,giulia,INFO,"XPath do número 5,8258: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:04:57,giulia,INFO,"Número 5,8258 encontrado na página."
+04-04-2025,15:05:28,giulia,INFO,"XPath do número 5,8258: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:05:28,giulia,INFO,"Número 5,8258 encontrado na página."
+04-04-2025,15:05:58,giulia,INFO,"XPath do número 5,8258: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:05:58,giulia,INFO,"Número 5,8258 encontrado na página."
+04-04-2025,15:06:29,giulia,WARNING,"Número 5,8258 NÃO econtrado na página."
+04-04-2025,15:06:29,giulia,INFO,"🚨 Mudança detectada: 5,8258 -> None"
+04-04-2025,15:06:59,giulia,WARNING,"Número 5,8258 NÃO econtrado na página."
+04-04-2025,15:07:29,giulia,WARNING,"Número 5,8258 NÃO econtrado na página."
+04-04-2025,15:08:00,giulia,WARNING,"Número 5,8258 NÃO econtrado na página."
+04-04-2025,15:08:30,giulia,WARNING,"Número 5,8258 NÃO econtrado na página."
+04-04-2025,15:09:01,giulia,WARNING,"Número 5,8258 NÃO econtrado na página."
+04-04-2025,15:09:31,giulia,WARNING,"Número 5,8258 NÃO econtrado na página."
+04-04-2025,15:10:01,giulia,WARNING,"Número 5,8258 NÃO econtrado na página."
+04-04-2025,15:10:28,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:10:51,giulia,INFO,"XPath do número 5,8206: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:10:51,giulia,INFO,"Número 5,8206 encontrado na página."
+04-04-2025,15:11:21,giulia,INFO,"XPath do número 5,8206: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:11:21,giulia,INFO,"Número 5,8206 encontrado na página."
+04-04-2025,15:11:52,giulia,INFO,"XPath do número 5,8206: /[document][2]/html[4]/body[43]/main[4]/div[4]/div[2]/div[2]/div[4]/div[2]/div[1]"
+04-04-2025,15:11:52,giulia,INFO,"Número 5,8206 encontrado na página."
+04-04-2025,15:12:22,giulia,INFO,"XPath do número 5,8206: /[document][2]/html[4]/body[43]/main[4]/div[4]/div[2]/div[2]/div[4]/div[2]/div[1]"
+04-04-2025,15:12:22,giulia,INFO,"Número 5,8206 encontrado na página."
+04-04-2025,15:12:52,giulia,INFO,"XPath do número 5,8206: /[document][2]/html[4]/body[43]/main[4]/div[4]/div[2]/div[2]/div[4]/div[2]/div[1]"
+04-04-2025,15:12:52,giulia,INFO,"Número 5,8206 encontrado na página."
+04-04-2025,15:13:23,giulia,INFO,"XPath do número 5,8206: /[document][2]/html[4]/body[43]/main[4]/div[4]/div[2]/div[2]/div[4]/div[2]/div[1]"
+04-04-2025,15:13:23,giulia,INFO,"Número 5,8206 encontrado na página."
+04-04-2025,15:13:53,giulia,INFO,"XPath do número 5,8206: /[document][2]/html[4]/body[43]/main[4]/div[4]/div[2]/div[2]/div[4]/div[2]/div[1]"
+04-04-2025,15:13:53,giulia,INFO,"Número 5,8206 encontrado na página."
+04-04-2025,15:14:24,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:14:24,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:14:54,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:14:54,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:15:24,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:15:24,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:15:55,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:15:55,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:16:25,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:16:25,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:16:56,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:16:56,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:17:26,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:17:26,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:17:56,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:17:56,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:18:27,giulia,WARNING,"Número 5,8206 NÃO econtrado na página."
+04-04-2025,15:18:27,giulia,WARNING,"🚨 Número 5,8206 desapareceu da página."
+04-04-2025,15:35:00,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:35:20,giulia,INFO,"XPath do número 5,8291: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:35:20,giulia,INFO,"Número 5,8291 encontrado na página."
+04-04-2025,15:35:50,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,15:36:20,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,15:36:29,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:37:03,giulia,INFO,"XPath do número 5,8311: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:37:03,giulia,INFO,"Número 5,8311 encontrado na página."
+04-04-2025,15:37:33,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,15:38:03,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,15:38:31,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:38:44,giulia,WARNING,"Número 5,828 NÃO econtrado na página."
+04-04-2025,15:45:46,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:46:04,giulia,WARNING,"Número 5,834 NÃO econtrado na página."
+04-04-2025,15:46:27,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:46:42,giulia,WARNING,"Número 5,835 NÃO econtrado na página."
+04-04-2025,15:50:49,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:51:10,giulia,INFO,"XPath do número 5,8261: /[document][2]/html[4]/body[43]/main[4]/div[4]/div[2]/div[2]/div[4]/div[2]/div[1]"
+04-04-2025,15:51:10,giulia,INFO,"Número 5,8261 encontrado na página."
+04-04-2025,15:51:40,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[43]/main[4]/div[4]/div[2]/div[2]/div[4]/div[2]/div[1] .
+04-04-2025,15:52:10,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[43]/main[4]/div[4]/div[2]/div[2]/div[4]/div[2]/div[1] .
+04-04-2025,15:52:22,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:52:31,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,15:52:46,giulia,INFO,"XPath do número 5,8241: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,15:52:46,giulia,INFO,"Número 5,8241 encontrado na página."
+04-04-2025,15:53:16,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,15:53:47,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,15:54:17,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,16:00:03,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:01:29,Giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:02:41,Giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:13:57,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:14:10,giulia,INFO,"XPath do número 5,8400: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,16:14:10,giulia,INFO,"Número 5,8400 encontrado na página."
+04-04-2025,16:14:40,giulia,ERROR,Erro durante monitoramento: extrair_por_xpath_selenium() missing 1 required positional argument: 'usuario'
+04-04-2025,16:15:10,giulia,ERROR,Erro durante monitoramento: extrair_por_xpath_selenium() missing 1 required positional argument: 'usuario'
+04-04-2025,16:16:50,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:17:08,giulia,ERROR,Erro ao acessar a URL https://economia.uol.com.br/: 403 Client Error: Forbidden for url: https://economia.uol.com.br/
+04-04-2025,16:18:34,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:18:46,giulia,INFO,"XPath do número 5,8395: /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1]"
+04-04-2025,16:18:46,giulia,INFO,"Número 5,8395 encontrado na página."
+04-04-2025,16:19:17,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,16:19:47,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,16:20:18,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,16:20:48,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,16:21:19,giulia,WARNING,🚨 Valor sumiu no XPath /[document][2]/html[4]/body[41]/div[4]/div[2]/div[4]/a[4]/div[1] .
+04-04-2025,16:32:04,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:33:11,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:34:41,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:36:25,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:37:10,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:37:32,giulia,INFO,"XPath do número 5,8435: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1]"
+04-04-2025,16:38:05,giulia,ERROR,"Erro inesperado: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+	GetHandleVerifier [0x00007FF665DE4C25+3179557]
+	(No symbol) [0x00007FF665A488A0]
+	(No symbol) [0x00007FF6658D91CA]
+	(No symbol) [0x00007FF665915CE8]
+	(No symbol) [0x00007FF665911CCD]
+	(No symbol) [0x00007FF665965E8B]
+	(No symbol) [0x00007FF665965460]
+	(No symbol) [0x00007FF665957A03]
+	(No symbol) [0x00007FF6659206D0]
+	(No symbol) [0x00007FF665921983]
+	GetHandleVerifier [0x00007FF665E467CD+3579853]
+	GetHandleVerifier [0x00007FF665E5D1D2+3672530]
+	GetHandleVerifier [0x00007FF665E52153+3627347]
+	GetHandleVerifier [0x00007FF665BB092A+868650]
+	(No symbol) [0x00007FF665A52FFF]
+	(No symbol) [0x00007FF665A4F4A4]
+	(No symbol) [0x00007FF665A4F646]
+	(No symbol) [0x00007FF665A3EAA9]
+	BaseThreadInitThunk [0x00007FF96837259D+29]
+	RtlUserThreadStart [0x00007FF96A70AF38+40]
+"
+04-04-2025,16:45:02,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:45:25,giulia,WARNING,"Número 5,,8365 não encontrado."
+04-04-2025,16:45:35,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,16:45:59,giulia,INFO,"XPath do número 5,8370: /[document][1]/html[1]/body[1]/main[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]"
+04-04-2025,16:46:37,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[1]/main[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1].
+04-04-2025,16:47:17,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[1]/main[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1].
+04-04-2025,16:47:58,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[1]/main[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1].
+04-04-2025,16:48:34,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,17:03:30,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,17:09:28,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,17:23:07,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,17:37:06,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,17:38:50,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,17:39:19,giulia,INFO,"XPath do número 5,8355: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1]"
+04-04-2025,17:40:01,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1].
+04-04-2025,17:40:46,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1].
+04-04-2025,17:41:32,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1].
+04-04-2025,17:41:38,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,17:48:37,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,17:49:13,giulia,INFO,"XPath do número 5,8355: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1]"
+04-04-2025,17:49:49,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1].
+04-04-2025,17:50:38,giulia,ERROR,"Erro inesperado: HTTPConnectionPool(host='localhost', port=63827): Max retries exceeded with url: /session/091f58b0-8bab-44ec-ba32-4508320df08e/refresh (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000015696109130>: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente'))"
+04-04-2025,17:56:16,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,17:56:40,giulia,INFO,"XPath do número 5,8355: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1]"
+04-04-2025,17:57:19,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1].
+04-04-2025,17:57:57,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1].
+04-04-2025,17:58:36,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1].
+04-04-2025,17:59:06,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,19:00:49,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:01:24,giulia,INFO,"XPath do número 5,8355: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1]"
+04-04-2025,19:02:03,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[8]/div[1]/div[1]/div[2]/a[2]/div[1].
+04-04-2025,19:02:42,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,19:03:13,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:04:07,giulia,INFO,XPath do número 127.409: /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]
+04-04-2025,19:04:46,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1].
+04-04-2025,19:04:51,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,19:14:16,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:14:46,giulia,INFO,XPath do número 127.409: /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]
+04-04-2025,19:15:25,giulia,INFO,XPath do número 127.409: /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]
+04-04-2025,19:15:25,giulia,INFO,Valor realocado. Novo XPath: /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]
+04-04-2025,19:16:04,giulia,INFO,XPath do número 127.409: /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]
+04-04-2025,19:16:04,giulia,INFO,Valor realocado. Novo XPath: /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]
+04-04-2025,19:16:42,giulia,INFO,XPath do número 127.409: /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]
+04-04-2025,19:16:42,giulia,INFO,Valor realocado. Novo XPath: /[document][1]/html[1]/body[1]/main[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]
+04-04-2025,19:17:10,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,19:22:15,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:22:47,giulia,WARNING,Número 127.409 não encontrado.
+04-04-2025,19:23:00,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:23:21,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:24:00,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:24:50,giulia,ERROR,"Erro inesperado: HTTPConnectionPool(host='localhost', port=52847): Max retries exceeded with url: /session/71f8694c-4871-4c72-a938-c631cf5e0e76/refresh (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022AEA5BAC90>: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente'))"
+04-04-2025,19:26:02,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:26:25,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:27:09,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:27:54,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:27:59,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,19:33:07,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:33:33,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:34:18,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:35:04,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:35:50,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:36:35,giulia,INFO,XPath do número 127.256: /[document][1]/html[1]/body[8]/div[1]/div[1]/div[1]/a[2]/div[1]
+04-04-2025,19:36:52,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,19:37:38,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:38:10,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+04-04-2025,19:38:57,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+04-04-2025,19:39:46,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+04-04-2025,19:40:11,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,19:41:19,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:41:57,giulia,WARNING,Número 1.336.698 não encontrado.
+04-04-2025,19:42:47,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:43:24,giulia,WARNING,Número 275.611 não encontrado.
+04-04-2025,19:43:59,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:44:25,giulia,WARNING,Número 731.130 não encontrado.
+04-04-2025,19:45:56,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:46:37,giulia,WARNING,Número 216.441 não encontrado.
+04-04-2025,19:48:52,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:49:13,giulia,INFO,XPath do número 1.12: /[document][1]/html[1]/head[4]/style[1]
+04-04-2025,19:49:53,giulia,INFO,XPath do número 1.12: /[document][1]/html[1]/head[4]/style[1]
+04-04-2025,19:50:35,giulia,INFO,XPath do número 1.12: /[document][1]/html[1]/head[4]/style[1]
+04-04-2025,19:51:28,giulia,INFO,XPath do número 1.12: /[document][1]/html[1]/head[4]/style[1]
+04-04-2025,19:52:09,giulia,INFO,Monitoramento encerrado manualmente.
+04-04-2025,19:52:48,giulia,INFO,Usuário registrado e iniciou monitoramento.
+04-04-2025,19:53:56,giulia,WARNING,Número 1.445 não encontrado.
+05-04-2025,08:10:53,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,08:11:24,giulia,INFO,XPath do número 48: /[document][1]/html[1]/body[2]/div[2]/div[1]/div[1]/div[1]/div[47]/div[2]/div[1]/span[1]
+05-04-2025,08:12:05,giulia,INFO,XPath do número 48: /[document][1]/html[1]/body[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/select[49]/option[1]
+05-04-2025,08:12:05,giulia,INFO,Valor realocado. Novo XPath: /[document][1]/html[1]/body[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/select[49]/option[1]
+05-04-2025,08:12:49,giulia,INFO,XPath do número 48: /[document][1]/html[1]/body[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/select[49]/option[1]
+05-04-2025,08:13:34,giulia,INFO,XPath do número 48: /[document][1]/html[1]/body[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/select[49]/option[1]
+05-04-2025,08:13:51,giulia,INFO,Monitoramento encerrado manualmente.
+05-04-2025,08:14:35,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,08:14:56,giulia,INFO,XPath do número 270: /[document][1]/html[1]/body[2]/div[2]/div[1]/div[1]/div[1]/div[47]/div[2]/div[1]/span[1]
+05-04-2025,08:15:37,giulia,INFO,XPath do número 270: /[document][1]/html[1]/body[2]/div[2]/div[1]/div[1]/div[1]/div[47]/div[2]/div[1]/span[1]
+05-04-2025,08:15:57,giulia,INFO,Monitoramento encerrado manualmente.
+05-04-2025,14:03:38,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:04:15,giulia,INFO,XPath do número 55: /[document][1]/html[1]/body[2]/div[2]/div[1]/div[1]/div[1]/div[47]/div[2]/div[1]/span[1]
+05-04-2025,14:04:16,giulia,INFO,XPath do número 55: /[document][1]/html[1]/body[2]/div[2]/div[1]/div[1]/div[1]/div[47]/div[2]/div[1]/span[1]
+05-04-2025,14:04:47,giulia,INFO,XPath do número 55: /[document][1]/html[1]/body[2]/div[2]/div[1]/div[1]/div[1]/div[47]/div[2]/div[1]/span[1]
+05-04-2025,14:05:18,giulia,INFO,XPath do número 55: /[document][1]/html[1]/body[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/select[56]/option[1]
+05-04-2025,14:05:18,giulia,INFO,Valor realocado. Novo XPath: /[document][1]/html[1]/body[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/select[56]/option[1]
+05-04-2025,14:05:49,giulia,INFO,XPath do número 55: /[document][1]/html[1]/body[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/select[56]/option[1]
+05-04-2025,14:05:59,giulia,INFO,Monitoramento encerrado manualmente.
+05-04-2025,14:06:59,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:07:23,giulia,INFO,"XPath do número 5,8424: /[document][1]/html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]/h2[1]"
+05-04-2025,14:07:24,giulia,INFO,"XPath do número 5,8424: /[document][1]/html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]/h2[1]"
+05-04-2025,14:07:55,giulia,INFO,"XPath do número 5,8424: /[document][1]/html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]/h2[1]"
+05-04-2025,14:08:26,giulia,INFO,"XPath do número 5,8424: /[document][1]/html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]/h2[1]"
+05-04-2025,14:08:57,giulia,INFO,"XPath do número 5,8424: /[document][1]/html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]/h2[1]"
+05-04-2025,14:09:28,giulia,INFO,"XPath do número 5,8424: /[document][1]/html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]/h2[1]"
+05-04-2025,14:09:59,giulia,INFO,"XPath do número 5,8424: /[document][1]/html[1]/body[1]/div[1]/div[1]/main[1]/section[3]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]/h2[1]"
+05-04-2025,14:10:14,giulia,INFO,Monitoramento encerrado manualmente.
+05-04-2025,14:10:45,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:11:11,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:11:12,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:11:43,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:12:15,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:12:46,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:13:17,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:13:48,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:14:19,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:14:51,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:15:22,giulia,WARNING,🚨 Valor sumiu no XPath /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1].
+05-04-2025,14:15:53,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:16:24,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:16:55,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:17:27,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:17:58,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:18:29,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:19:00,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:19:31,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:20:03,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:20:34,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:21:05,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:21:36,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:22:07,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:22:38,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:23:10,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:23:41,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:24:12,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:24:43,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:25:14,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:25:46,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:26:17,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:26:48,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:27:19,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:27:50,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:28:22,giulia,INFO,"XPath do número 5,836: /[document][1]/html[1]/body[1]/div[1]/div[1]/div[1]/header[2]/div[1]/div[1]/div[1]/a[2]/span[1]"
+05-04-2025,14:28:48,giulia,INFO,Monitoramento encerrado manualmente.
+05-04-2025,14:29:25,gustavo,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:30:10,gustavo,WARNING,Número 218.241 não encontrado.
+05-04-2025,14:32:11,gustavo,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:32:39,gustavo,WARNING,"Número 5,836 não encontrado."
+05-04-2025,14:32:57,gustavo,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:33:40,gustavo,WARNING,"Número 5,836 não encontrado."
+05-04-2025,14:34:03,gustavo,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:34:22,gustavo,WARNING,"Número 5,836 não encontrado."
+05-04-2025,14:52:50,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:53:18,giulia,WARNING,"Número 5,836 não encontrado."
+05-04-2025,14:57:49,giulia,INFO,Usuário registrado e iniciou monitoramento.
+05-04-2025,14:57:58,giulia,INFO,XPath do número 4003: /[document][2]/html[2]/body[1]/div[1]/div[1]/div[7]/header[6]/nav[1]/ul[1]/li[2]/div[2]/div[4]/div[1]/strong[1]
+05-04-2025,14:57:58,giulia,INFO,Número encontrado: 4003 (posição 0)
