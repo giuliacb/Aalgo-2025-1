@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module TrabalhoOficial</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">TrabalhoOficial</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cgiulia%5Caalgo-2025-1%5Caalgo-2025-1%5Ctrabalho01%5Ctrabalhooficial.py">c:\users\giulia\aalgo-2025-1\aalgo-2025-1\trabalho01\trabalhooficial.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="selenium.webdriver.support.expected_conditions.html">selenium.webdriver.support.expected_conditions</a><br>
+<a href="csv.html">csv</a><br>
+</td><td class="multicolumn"><a href="os.html">os</a><br>
+<a href="re.html">re</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+<a href="selenium.webdriver.html">selenium.webdriver</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-configurar_driver"><strong>configurar_driver</strong></a>()</dt><dd><span class="code">Configura&nbsp;e&nbsp;retorna&nbsp;um&nbsp;driver&nbsp;do&nbsp;Selenium&nbsp;com&nbsp;Firefox&nbsp;em&nbsp;modo&nbsp;privado.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;webdriver.Firefox:&nbsp;Driver&nbsp;do&nbsp;Firefox&nbsp;configurado.</span></dd></dl>
+ <dl><dt><a name="-encontrar_numero_e_xpath"><strong>encontrar_numero_e_xpath</strong></a>(driver, numero, usuario)</dt><dd><span class="code">Procura&nbsp;um&nbsp;número&nbsp;em&nbsp;uma&nbsp;página&nbsp;carregada&nbsp;no&nbsp;Selenium&nbsp;e&nbsp;retorna&nbsp;seu&nbsp;XPath.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;driver&nbsp;(webdriver):&nbsp;Driver&nbsp;do&nbsp;Selenium&nbsp;com&nbsp;a&nbsp;página&nbsp;carregada.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;numero&nbsp;(str):&nbsp;Número&nbsp;a&nbsp;ser&nbsp;encontrado&nbsp;na&nbsp;página.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;usuario&nbsp;(str):&nbsp;Nome&nbsp;do&nbsp;usuário&nbsp;para&nbsp;fins&nbsp;de&nbsp;log.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;Número&nbsp;encontrado&nbsp;e&nbsp;XPath&nbsp;correspondente.&nbsp;Se&nbsp;não&nbsp;encontrado,&nbsp;retorna&nbsp;(None,&nbsp;None).</span></dd></dl>
+ <dl><dt><a name="-extrair_valor_por_xpath"><strong>extrair_valor_por_xpath</strong></a>(driver, xpath)</dt><dd><span class="code">Extrai&nbsp;o&nbsp;texto&nbsp;de&nbsp;um&nbsp;elemento&nbsp;localizado&nbsp;por&nbsp;um&nbsp;XPath&nbsp;na&nbsp;página&nbsp;carregada&nbsp;pelo&nbsp;Selenium.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;driver&nbsp;(webdriver):&nbsp;Driver&nbsp;do&nbsp;Selenium&nbsp;com&nbsp;a&nbsp;página&nbsp;carregada.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xpath&nbsp;(str):&nbsp;Caminho&nbsp;XPath&nbsp;do&nbsp;elemento.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Texto&nbsp;extraído&nbsp;do&nbsp;elemento&nbsp;ou&nbsp;None&nbsp;se&nbsp;não&nbsp;encontrado.</span></dd></dl>
+ <dl><dt><a name="-registrar_log"><strong>registrar_log</strong></a>(usuario, mensagem, nivel='INFO')</dt><dd><span class="code">Registra&nbsp;uma&nbsp;entrada&nbsp;de&nbsp;log&nbsp;no&nbsp;arquivo&nbsp;CSV&nbsp;de&nbsp;monitoramento.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;usuario&nbsp;(str):&nbsp;Nome&nbsp;do&nbsp;usuário&nbsp;que&nbsp;está&nbsp;utilizando&nbsp;o&nbsp;sistema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mensagem&nbsp;(str):&nbsp;Mensagem&nbsp;a&nbsp;ser&nbsp;registrada&nbsp;no&nbsp;log.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nivel&nbsp;(str):&nbsp;Nível&nbsp;do&nbsp;log&nbsp;(ex:&nbsp;INFO,&nbsp;WARNING,&nbsp;ERROR).&nbsp;Padrão&nbsp;é&nbsp;"INFO".</span></dd></dl>
+ <dl><dt><a name="-solicitar_nome_user"><strong>solicitar_nome_user</strong></a>()</dt><dd><span class="code">Solicita&nbsp;o&nbsp;nome&nbsp;do&nbsp;usuário&nbsp;e&nbsp;valida&nbsp;se&nbsp;é&nbsp;composto&nbsp;por&nbsp;pelo&nbsp;menos&nbsp;3&nbsp;letras&nbsp;e&nbsp;apenas&nbsp;caracteres&nbsp;alfabéticos.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Nome&nbsp;válido&nbsp;do&nbsp;usuário.</span></dd></dl>
+ <dl><dt><a name="-validar_url"><strong>validar_url</strong></a>(url)</dt><dd><span class="code">Valida&nbsp;se&nbsp;uma&nbsp;string&nbsp;é&nbsp;uma&nbsp;URL&nbsp;válida.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;url&nbsp;(str):&nbsp;URL&nbsp;a&nbsp;ser&nbsp;validada.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;se&nbsp;a&nbsp;URL&nbsp;for&nbsp;válida,&nbsp;False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>log_file</strong> = 'monitoramento.csv'</td></tr></table>
+</body></html>

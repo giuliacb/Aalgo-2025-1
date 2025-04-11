@@ -372,3 +372,15 @@ Stacktrace:
 05-04-2025,15:21:36,luiz,INFO,XPath do número 38: /html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[3]/span[1]
 05-04-2025,15:22:06,luiz,INFO,🚨 Mudança detectada: 38 -> 37
 05-04-2025,15:22:29,luiz,INFO,Monitoramento encerrado manualmente.
+11-04-2025,11:41:59,giulia,INFO,Usuário registrado e iniciou monitoramento.
+11-04-2025,11:42:58,giulia,INFO,"XPath do número 5,90: /html[1]/body[1]/div[1]/div[1]/div[1]/header[1]/div[2]/div[1]/div[1]/a[1]/span[2]"
+11-04-2025,11:43:48,giulia,INFO,Monitoramento encerrado manualmente.
+11-04-2025,12:00:58,giulia,INFO,Usuário registrado e iniciou monitoramento.
+11-04-2025,12:02:02,giulia,WARNING,"Número 5,892 não encontrado."
+11-04-2025,12:02:28,giulia,INFO,Usuário registrado e iniciou monitoramento.
+11-04-2025,12:03:43,giulia,INFO,"XPath do número 5,886: /html[1]/body[1]/div[1]/div[1]/div[1]/header[1]/div[2]/div[1]/div[1]/a[1]/span[2]"
+11-04-2025,12:06:43,giulia,INFO,"🚨 Mudança detectada: 5,886 -> 5,891"
+11-04-2025,12:09:20,giulia,INFO,Monitoramento encerrado manualmente.
+11-04-2025,12:10:46,ANGEL,INFO,Usuário registrado e iniciou monitoramento.
+11-04-2025,12:11:33,ANGEL,INFO,"XPath do número 5,895: /html[1]/body[1]/div[1]/div[1]/div[1]/header[1]/div[2]/div[1]/div[1]/a[1]/span[2]"
+11-04-2025,12:12:55,ANGEL,INFO,Monitoramento encerrado manualmente.
