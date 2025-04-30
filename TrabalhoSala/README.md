@@ -4,11 +4,63 @@ Este projeto implementa uma API REST com FastAPI para gerenciamento de chamados 
 
 ## 🚀 Funcionalidades
 
-- ✅ Adicionar chamados com informações de cliente e tipo de problema
-- ✅ Fila ordenada por **prioridade combinada** (tipo de chamado + tipo de cliente)
-- ✅ Processar o próximo chamado da fila
-- ✅ Listar chamados pendentes
-- ✅ Notificações visuais para chamados urgentes (ex: SERVER_DOWN)
+- ✅ Adicionar chamados com informações de cliente e tipo de problema  
+- ✅ Fila ordenada por **prioridade combinada** (tipo de chamado + tipo de cliente)  
+- ✅ Processar o próximo chamado da fila  
+- ✅ Listar chamados pendentes  
+- ✅ Notificações visuais para chamados urgentes (ex: SERVER_DOWN)  
+- ✅ **Escalonamento manual de chamados**
+- ✅ **Atribuição de agentes aos chamados**
+- ✅ **Interface Web com atualizações em tempo real (SSE)**
+- ✅ **Tempo estimado de resolução por tipo de chamado**
+
+
+## 🔧 Funcionalidades Extras Implementadas
+
+### 🚨 Escalonar Chamado
+Aumenta manualmente a prioridade de um chamado específico, tornando-o mais urgente na fila.
+
+**Exemplo de uso via API**:
+curl -X POST http://localhost:8000/escalar/C123
+
+> Esse endpoint reduz numericamente o valor da prioridade do chamado, garantindo que não fique abaixo de 1.
+
+
+### 👩‍💻 Atribuir Agente ao Chamado
+Permite designar um agente de suporte a um chamado específico.
+
+**Exemplo de uso via API**:
+curl -X POST "http://localhost:8000/atribuir/C123?agente=Joao"
+
+> O `id_chamado` é passado na URL, e o nome do agente no parâmetro `agente`.
+
+
+### ⏱️ Tempo Estimado por Tipo de Chamado
+
+Cada chamado agora inclui um tempo estimado com base em seu tipo:
+
+| Tipo de Chamado     | Tempo Estimado |
+|---------------------|----------------|
+| SERVER_DOWN         | 60 minutos     |
+| IMPACTA_PRODUCAO    | 45 minutos     |
+| SEM_IMPACTO         | 30 minutos     |
+| DUVIDA              | 15 minutos     |
+
+Esse valor é exibido na fila e na interface web.
+
+
+### 🌐 Interface Web em Tempo Real
+
+Foi criada uma interface HTML simples para visualizar a fila em tempo real:
+
+- Caminho: `TrabalhoSala/fila.html`
+- Endpoint: [http://localhost:8000/web](http://localhost:8000/web)
+- Atualizações via **Server-Sent Events (SSE)** sem precisar recarregar a página.
+
+Utiliza:
+
+- `Jinja2` para renderização HTML
+- `sse-starlette` para SSE
 
 
 ## ⚙️ Instalação e Execução
@@ -29,12 +81,14 @@ source venv/bin/activate
 ### 3. Instale as dependências
 pip install -r requirements.txt
 
-
 ### 4. Execute a API
 python -m uvicorn FilaPrioridade:app --reload
-> A API estará disponível em: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+> A API estará disponível em: [http://127.0.0.1:8000](http://127.0.0.1:8000)  
 > Obs: FilaPrioridade é o nome do arquivo. Se o nome do seu arquivo for diferente, substitua.
 
+
+## 🔁 Exemplos de Uso via `curl`
 
 ### ✅ Adicionar um chamado
 curl -X POST http://localhost:8000/chamado \
@@ -47,10 +101,10 @@ curl -X POST http://localhost:8000/chamado \
         "descricao": "Servidor caiu"
       }'
 
-> Obs: Os campos tipo_cliente e tipo_chamado devem ser informados sem acentos ou caracteres especiais. Eles devem coincidir exatamente com os valores dos Enums, como:
-    - tipo_cliente: PRIORITARIO, SEM_PRIORIDADE, DEMONSTRACAO
-    - tipo_chamado: SERVER_DOWN, IMPACTA_PRODUCAO, SEM_IMPACTO, DUVIDA
 
+> Os campos `tipo_cliente` e `tipo_chamado` devem coincidir com os valores dos Enums não contendo acentuação ou caracteres especiais:
+- tipo_cliente: PRIORITARIO, SEM_PRIORIDADE, DEMONSTRACAO  
+- tipo_chamado: SERVER_DOWN, IMPACTA_PRODUCAO, SEM_IMPACTO, DUVIDA
 
 ### 📋 Listar fila
 curl http://localhost:8000/fila
@@ -61,74 +115,57 @@ curl http://localhost:8000/proximo_chamado
 
 
 ## 📦 Dependências
-
 As principais bibliotecas utilizadas:
 
 - [`fastapi`](https://fastapi.tiangolo.com/)
-- [`uvicorn`](https://www.uvicorn.org/) – servidor ASGI para rodar a API
-- [`plyer`](https://github.com/kivy/plyer) – envio de notificações no desktop
-- `pydantic` – validação de dados
-- `heapq` – fila de prioridade nativa do Python
+- [`uvicorn`](https://www.uvicorn.org/)
+- [`plyer`](https://github.com/kivy/plyer)
+- `jinja2`
+- `sse-starlette`
+- `pydantic`
+- `heapq`
 
-> Obs: A `plyer` pode exigir dependências de notificação específicas para cada sistema operacional. Em alguns ambientes Linux, pode ser necessário instalar `libnotify` ou ferramentas equivalentes.
+> ⚠️ Obs: A `plyer` pode exigir bibliotecas extras no sistema (ex: `libnotify` no Linux).
 
 
-## 📎 Observações
+## 📎 Observações Técnicas
 
-- O sistema usa a **prioridade combinada** como uma tupla `(prioridade_chamado, prioridade_cliente)` onde     menor valor = maior prioridade.
-- Tipos de chamados e clientes são padronizados com Enums.
-- As notificações são disparadas em dois momentos:
-  - Ao adicionar chamados críticos (`SERVER_DOWN`, `IMPACTA_PRODUCAO`)
-  - Ao processar o próximo chamado, se for urgente.
+- A **prioridade** é uma tupla: `(tipo_chamado, tipo_cliente)`
+- A fila é uma min-heap (`heapq`) — quanto menor a tupla, maior a urgência
+- A interface Web usa `SSE` para atualização da fila sem recarregamento
+- O HTML da interface está em `TrabalhoSala/fila.html`
 
 
 ## ⚙️ Análise de Complexidade – heapq
 
-- `heapq.heappush()` – **Inserção de chamado**  
-  ⏱️ Complexidade: **O(log n)**  
-  Cada inserção reorganiza parcialmente a heap para manter a propriedade de min-heap.
+| Operação             | Complexidade |
+|----------------------|--------------|
+| Inserção (heappush)  | O(log n)     |
+| Remoção (heappop)    | O(log n)     |
 
-- `heapq.heappop()` – **Remoção do chamado mais prioritário**  
-  ⏱️ Complexidade: **O(log n)**  
-  Remove o menor elemento (maior prioridade), reordenando a heap.
+> `heapq` é eficiente mesmo com milhares de elementos, ideal para cenários com alta carga.
 
 
 ## Comparação com Alternativas
 
-| Estrutura       > Inserção   > Remoção do mais prioritário > Comentário          
-
-| Heap (heapq)    >   O(log n)   > O(log n)     > Ideal para fila de prioridades.    
-| Lista Ordenada  >      O(n)    > O(1)         > Inserção lenta, mas remoção rápida.
-| Lista Não Ordenada >   O(1)    > O(n)         > Inserção rápida, mas busca/remoção lenta.       
-| Árvore Balanceada  > O(log n)  > O(log n)     > Mais flexível, mas mais complexa de implementar.
-
-> Conclusão: A `heapq` oferece o melhor custo-benefício em Python puro, especialmente considerando o volume crescente de chamados.
+| Estrutura         | Inserção | Remoção (prioritário)  | Comentário                        |
+|-------------------|----------|------------------------|-----------------------------------|
+| `heapq` (min-heap)| O(log n) | O(log n)               | ✅ Ideal para prioridade dinâmica|
+| Lista ordenada    | O(n)     | O(1)                   | ❌ Inserção lenta                |
+| Lista não ordenada| O(1)     | O(n)                   | ❌ Busca/remoção lenta           |
+| Árvore balanceada | O(log n) | O(log n)               | ⚠️ Mais complexa de implementar  |
 
 
-## Escalabilidade do Sistema
+## 📈 Escalabilidade
 
-> Comportamento com volume crescente de chamados:
-- A estrutura heap é eficiente mesmo com milhares de elementos.
-- Operações de push/pop mantêm desempenho consistente (O(log n)), diferente de listas que degradam para O(n).
-
-> Pontos de atenção com escalabilidade:
-- Se houver centenas de milhares de chamados simultâneos, pode valer a pena:
-  - Persistir os dados em um banco (Redis, SQLite, PostgreSQL).
-  - Usar tarefas assíncronas/processamento em lote.
-  - Aplicar sharding por cliente/tipo de chamado para balanceamento.
-
-
-## Resumo Final
-
-| Aspecto                       | Resultado |
-|-------------------------------|-----------|
-| Inserção (heappush)           | O(log n)  |
-| Remoção (heappop)             | O(log n)  |
-| Ideal para grande volume?     | ✅ Sim    |
-| Melhor que listas simples?    | ✅ Muito mais eficiente |
+- Boa performance com milhares de chamados simultâneos
+- Pode ser estendido com:
+  - Banco de dados (Redis, SQLite, etc)
+  - Filas distribuídas
+  - Balanceamento por tipo de chamado
 
 
 ## 📧 Autor
 
-Desenvolvido por Giulia Campelo Bezerra
-Projeto acadêmico para gerenciamento de chamados de suporte técnico.
+Desenvolvido por **Giulia Campelo Bezerra**  
+Projeto acadêmico – *Gerenciamento de chamados com priorização e resposta em tempo real*
