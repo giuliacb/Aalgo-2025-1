@@ -1,0 +1,120 @@
+Esses comandos abrangem todas as combinações de **`tipo_cliente`** e **`tipo_chamado`**, permitindo que você teste exaustivamente a aplicação com diferentes inputs.
+
+### 1. `prioritario` + `server_down`
+'{
+  "id_chamado": "CH001",
+  "cliente_nome": "Empresa A",
+  "tipo_cliente": "prioritario",
+  "tipo_chamado": "server_down",
+  "descricao": "Servidor caiu completamente."
+}'
+
+
+### 2. `sem_prioridade` + `server_down`
+'{
+  "id_chamado": "CH002",
+  "cliente_nome": "Empresa B",
+  "tipo_cliente": "sem_prioridade",
+  "tipo_chamado": "server_down",
+  "descricao": "Servidor caiu completamente."
+}'
+
+
+### 3. `demonstracao` + `server_down`
+'{
+  "id_chamado": "CH003",
+  "cliente_nome": "Empresa C",
+  "tipo_cliente": "demonstracao",
+  "tipo_chamado": "server_down",
+  "descricao": "Servidor caiu completamente."
+}'
+
+
+### 4. `prioritario` + `impacta_producao`
+'{
+  "id_chamado": "CH004",
+  "cliente_nome": "Empresa D",
+  "tipo_cliente": "prioritario",
+  "tipo_chamado": "impacta_producao",
+  "descricao": "Erro impede o faturamento."
+}'
+
+
+### 5. `sem_prioridade` + `impacta_producao`
+'{
+  "id_chamado": "CH005",
+  "cliente_nome": "Empresa E",
+  "tipo_cliente": "sem_prioridade",
+  "tipo_chamado": "impacta_producao",
+  "descricao": "Erro impede o faturamento."
+}'
+
+
+### 6. `demonstracao` + `impacta_producao`
+'{
+  "id_chamado": "CH006",
+  "cliente_nome": "Empresa F",
+  "tipo_cliente": "demonstracao",
+  "tipo_chamado": "impacta_producao",
+  "descricao": "Erro impede o faturamento."
+}'
+
+
+### 7. `prioritario` + `sem_impacto`
+'{
+  "id_chamado": "CH007",
+  "cliente_nome": "Empresa G",
+  "tipo_cliente": "prioritario",
+  "tipo_chamado": "sem_impacto",
+  "descricao": "Mensagem estranha na tela, sem impacto."
+}'
+
+
+### 8. `sem_prioridade` + `sem_impacto`
+'{
+  "id_chamado": "CH008",
+  "cliente_nome": "Empresa H",
+  "tipo_cliente": "sem_prioridade",
+  "tipo_chamado": "sem_impacto",
+  "descricao": "Mensagem estranha na tela, sem impacto."
+}'
+
+
+### 9. `demonstracao` + `sem_impacto`
+'{
+  "id_chamado": "CH009",
+  "cliente_nome": "Empresa I",
+  "tipo_cliente": "demonstracao",
+  "tipo_chamado": "sem_impacto",
+  "descricao": "Mensagem estranha na tela, sem impacto."
+}'
+
+
+### 10. `prioritario` + `duvida`
+'{
+  "id_chamado": "CH010",
+  "cliente_nome": "Empresa J",
+  "tipo_cliente": "prioritario",
+  "tipo_chamado": "duvida",
+  "descricao": "Cliente com dúvida sobre relatório."
+}'
+
+
+### 11. `sem_prioridade` + `duvida`
+'{
+  "id_chamado": "CH011",
+  "cliente_nome": "Empresa K",
+  "tipo_cliente": "sem_prioridade",
+  "tipo_chamado": "duvida",
+  "descricao": "Pergunta sobre acesso ao sistema."
+}'
+
+
+### 12. `demonstracao` + `duvida`
+'{
+  "id_chamado": "CH012",
+  "cliente_nome": "Empresa L",
+  "tipo_cliente": "demonstracao",
+  "tipo_chamado": "duvida",
+  "descricao": "Pergunta sobre acesso ao sistema."
+}'

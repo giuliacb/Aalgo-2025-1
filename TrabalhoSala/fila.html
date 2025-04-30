@@ -27,6 +27,13 @@
     .chamado:last-child {
       border-bottom: none;
     }
+    .loading {
+      font-style: italic;
+      color: #888;
+    }
+    .erro {
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -36,31 +43,39 @@
   <script>
     const filaDiv = document.getElementById("fila");
 
+    function exibirChamados(chamados) {
+    if (chamados.length === 0) {
+        filaDiv.innerHTML = "<p class='loading'>🟢 Fila vazia.</p>";
+    } else {
+        filaDiv.innerHTML = chamados.map((chamado, index) => `
+        <div class="chamado">
+            <strong>${index + 1}. ${chamado.id_chamado}</strong> - ${chamado.tipo_chamado} <br>
+            Cliente: ${chamado.cliente_nome} (${chamado.tipo_cliente}) <br>
+            Agente: ${chamado.agente ?? "Não atribuído"} <br>
+            Tempo estimado: ${chamado.tempo_estimado} min
+        </div>
+        `).join("");
+    }
+    }
+
+    // SSE - conexão com o servidor
     const eventSource = new EventSource("http://localhost:8000/stream");
 
     eventSource.onmessage = (event) => {
-      try {
-        const chamados = JSON.parse(event.data);
-        if (chamados.length === 0) {
-          filaDiv.innerHTML = "<p>Fila vazia.</p>";
-        } else {
-          filaDiv.innerHTML = chamados.map((chamado, index) => `
-            <div class="chamado">
-              <strong>${index + 1}. ${chamado.id_chamado}</strong> - ${chamado.tipo_chamado} <br>
-              Cliente: ${chamado.cliente_nome} (${chamado.tipo_cliente}) <br>
-              Agente: ${chamado.agente ?? "Não atribuído"} <br>
-              Tempo estimado: ${chamado.tempo_estimado} min
-            </div>
-          `).join("");
+        try {
+            const chamados = JSON.parse(event.data);
+            exibirChamados(chamados);
+        } catch (e) {
+            console.error("Erro no JSON:", e);
+            filaDiv.innerHTML = "<p class='erro'>❌ Erro ao carregar dados da fila.</p>";
         }
-      } catch (e) {
-        filaDiv.innerHTML = "<p>Erro ao carregar dados.</p>";
-      }
-    };
+        };
 
     eventSource.onerror = () => {
-      filaDiv.innerHTML = "<p>Erro na conexão com o servidor SSE.</p>";
-    };
+        filaDiv.innerHTML = "<p class='erro'>🚫 Erro na conexão com o servidor SSE.</p>";
+        };
+
+    
   </script>
 </body>
 </html>

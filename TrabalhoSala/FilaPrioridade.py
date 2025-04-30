@@ -5,11 +5,19 @@ import heapq
 from typing import List, Tuple
 from plyer import notification
 from enum import Enum
-from starlette.responses import EventSourceResponse
+from sse_starlette.sse import EventSourceResponse
+from starlette.requests import Request
 import asyncio
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 from fastapi.responses import HTMLResponse
+import json
+from fastapi.middleware.cors import CORSMiddleware
+import pytz
+import os
+
+#fuso horário de Brasília
+brasilia_tz = pytz.timezone('America/Sao_Paulo')
 
 # Mapeamentos de prioridade
 # Enum para tipos de chamados com níveis de prioridade (menor valor = mais urgente)
@@ -65,8 +73,9 @@ class ChamadoSuporte:
         self.tipo_chamado = tipo_chamado.upper().replace(" ", "_")
         self.descricao = descricao
         self.agente = None  # Novo atributo
-        self.tempo_estimado = TEMPO_RESOLUCAO_ESTIMADO.get(self.tipo_chamado, 30)
-        self.timestamp = datetime.now()
+        self.tempo_estimado = None # Será calculado depois, ao adicionar à fila
+        # Ajuste para horário de Brasília (BRT)
+        self.timestamp = datetime.now(pytz.utc).astimezone(brasilia_tz)
 
 # --- Função de notificação ---
 def enviar_notificacao_desktop(titulo: str, mensagem: str):
@@ -87,6 +96,14 @@ class GerenciadorFilaChamados:
         self.fila_heap: List[Tuple[Tuple[int, int], datetime, ChamadoSuporte]] = []
 
     def adicionar_chamado(self, chamado: ChamadoSuporte):
+        # Verifica se o id_chamado já existe na fila
+        for _, _, ch in self.fila_heap:
+            if ch.id_chamado == chamado.id_chamado:
+                return {"erro": f"Chamado com ID {chamado.id_chamado} já foi adicionado à fila."}
+
+        # Calcula o tempo estimado com base no tipo do cliente e do chamado
+        chamado.tempo_estimado = self.calcular_tempo_estimado(chamado.tipo_cliente.lower(), chamado.tipo_chamado.lower())
+        
         # Calcula a prioridade combinada
         prioridade = calcular_prioridade_combinada(chamado.tipo_chamado, chamado.tipo_cliente)
         print(f"[LOG] Chamado {chamado.id_chamado} adicionado com prioridade {prioridade}")
@@ -100,6 +117,7 @@ class GerenciadorFilaChamados:
                 f"Novo chamado: {chamado.tipo_chamado.replace('_', ' ').title()}",
                 f"Cliente: {chamado.cliente_nome}\nDescrição: {chamado.descricao}"
             )
+        return {"mensagem": "Chamado adicionado com sucesso", "id": chamado.id_chamado}
 
     def listar_fila(self):
         """
@@ -107,14 +125,17 @@ class GerenciadorFilaChamados:
         """
         return [
             {
-                "id": ch.id_chamado,
-                "cliente": ch.cliente_nome,
+                "id_chamado": ch.id_chamado,
+                "cliente_nome": ch.cliente_nome,
                 "tipo_chamado": ch.tipo_chamado,
                 "tipo_cliente": ch.tipo_cliente,
-                "timestamp": ch.timestamp.isoformat()
+                "timestamp": ch.timestamp.strftime('%Y-%m-%d %H:%M:%S'),
+                "agente": ch.agente,
+                "tempo_estimado": ch.tempo_estimado 
             }
             for _, _, ch in self.fila_heap
         ]
+        
 
     def processar_proximo(self):
         """
@@ -141,12 +162,48 @@ class GerenciadorFilaChamados:
               f"Cliente: {chamado.cliente_nome} | Tipo: {chamado.tipo_chamado}")
 
         return chamado # Retorna o chamado processado
+    
+    def calcular_tempo_estimado(self, tipo_cliente: str, tipo_chamado: str) -> int:
+        tempos = {
+            "prioritario": {
+                "server_down": 15,
+                "impacta_producao": 30,
+                "sem_impacto": 60,
+                "duvida": 45,
+            },
+            "sem_prioridade": {
+                "server_down": 30,
+                "impacta_producao": 60,
+                "sem_impacto": 90,
+                "duvida": 60,
+            },
+            "demonstracao": {
+                "server_down": 45,
+                "impacta_producao": 90,
+                "sem_impacto": 120,
+                "duvida": 90,
+            },
+        }
+        try:
+            return tempos[tipo_cliente][tipo_chamado]
+        except KeyError:
+            raise ValueError("Tipo de cliente ou chamado inválido para cálculo de tempo estimado.")
+
+        
 
 # -------------------------- FASTAPI - ROTAS --------------------------
 
 # Cria a instância da aplicação FastAPI
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # ou restrinja com: ["http://127.0.0.1:5500"]
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Instancia o gerenciador de chamados (fila compartilhada entre rotas)
 gerenciador = GerenciadorFilaChamados()
@@ -222,9 +279,11 @@ def escalar_chamado(id_chamado: str):
             return {"mensagem": f"Chamado {id_chamado} escalado com sucesso."}
     return {"erro": "Chamado não encontrado na fila."}
 
+class AgenteInput(BaseModel):
+    agente: str
 
 @app.post("/atribuir/{id_chamado}")
-def atribuir_agente(id_chamado: str, agente: str):
+def atribuir_agente(id_chamado: str, dados: AgenteInput):
     """
     Endpoint para atribuir um agente a um chamado específico.
     O id do chamado é passado na URL, e o agente é passado no corpo da requisição.
@@ -233,8 +292,8 @@ def atribuir_agente(id_chamado: str, agente: str):
         # Procurar o chamado pelo id
         if chamado.id_chamado == id_chamado:
             # Atribuir o agente ao chamado
-            chamado.agente = agente
-            return {"mensagem": f"Chamado {id_chamado} atribuído a {agente}."}
+            chamado.agente = dados.agente
+            return {"mensagem": f"Chamado {id_chamado} atribuído a {dados.agente}."}
     return {"erro": "Chamado não encontrado."}
 
 
@@ -251,14 +310,20 @@ async def stream_fila():
             # Obter a lista atualizada da fila de chamados
             fila = gerenciador.listar_fila()
             # Enviar os dados para o cliente via SSE
-            yield f"data: {fila}\n\n"
+            yield {
+                "event": "message",
+                "data": json.dumps(fila)
+            } # serializa para JSON
             # Esperar 2 segundos antes de enviar a próxima atualização
-            await asyncio.sleep(2)
+            await asyncio.sleep(5)
 
     return EventSourceResponse(event_generator())
 
 
-templates = Jinja2Templates(directory="TrabalhoSala")
+# Caminho para o diretório de templates, assumindo que "TrabalhoSala" está no mesmo nível de "FilaPrioridade.py"
+#templates = Jinja2Templates(directory="TrabalhoSala")
+templates = Jinja2Templates(directory="C:/Users/Giulia/Aalgo-2025-1/Aalgo-2025-1/TrabalhoSala") #caminho absoluto pois ele não estava achando o arq fila.html
+
 
 @app.get("/web", response_class=HTMLResponse)
 def web_interface(request: Request):
@@ -266,5 +331,8 @@ def web_interface(request: Request):
     Endpoint que serve a interface web da fila de chamados.
     A página HTML será renderizada utilizando o Jinja2.
     """
-    return templates.TemplateResponse("fila.html", {"request": request})
+    # Acesse a fila de chamados aqui
+    fila_de_chamados = gerenciador.listar_fila()
 
+    return templates.TemplateResponse("fila.html", {"request": request, "chamados": fila_de_chamados})
+    
