@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fila de Chamados - Tempo Real</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1rem;
+      background: #f7f7f7;
+    }
+    h1 {
+      color: #333;
+    }
+    #fila {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+    .chamado {
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 0;
+    }
+    .chamado:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>📋 Fila de Chamados (Tempo Real)</h1>
+  <div id="fila">Conectando ao servidor...</div>
+
+  <script>
+    const filaDiv = document.getElementById("fila");
+
+    const eventSource = new EventSource("http://localhost:8000/stream");
+
+    eventSource.onmessage = (event) => {
+      try {
+        const chamados = JSON.parse(event.data);
+        if (chamados.length === 0) {
+          filaDiv.innerHTML = "<p>Fila vazia.</p>";
+        } else {
+          filaDiv.innerHTML = chamados.map((chamado, index) => `
+            <div class="chamado">
+              <strong>${index + 1}. ${chamado.id_chamado}</strong> - ${chamado.tipo_chamado} <br>
+              Cliente: ${chamado.cliente_nome} (${chamado.tipo_cliente}) <br>
+              Agente: ${chamado.agente ?? "Não atribuído"} <br>
+              Tempo estimado: ${chamado.tempo_estimado} min
+            </div>
+          `).join("");
+        }
+      } catch (e) {
+        filaDiv.innerHTML = "<p>Erro ao carregar dados.</p>";
+      }
+    };
+
+    eventSource.onerror = () => {
+      filaDiv.innerHTML = "<p>Erro na conexão com o servidor SSE.</p>";
+    };
+  </script>
+</body>
+</html>

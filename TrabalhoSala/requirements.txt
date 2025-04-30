@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+plyer
+pydantic
+heapq
+jinja2
+sse-starlette
